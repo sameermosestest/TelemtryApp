@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Temeltry Projest">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/opentelemetry-javaagent.jar!/" />
+      <root url="jar://$PROJECT_DIR$/fullstack-backend-0.0.1-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
