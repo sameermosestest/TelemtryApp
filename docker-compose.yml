@@ -3,7 +3,6 @@ services:
   springapp:
     container_name: springapp
     build:
-      context: ./springapp
       dockerfile: Dockerfile
     environment:
       - OTEL_SERVICE_NAME=backendapp
