@@ -1,13 +1,14 @@
 version: '3.1'
 services:
-  backend:
-    container_name: telemtry-app
+  springapp:
+    container_name: springapp
     build:
+      context: ./springapp
       dockerfile: Dockerfile
     environment:
-      - OTEL_SERVICE_NAME=ms-one
+      - OTEL_SERVICE_NAME=backendapp
       - OTEL_EXPORTER=otlp_span
-      - OTEL_EXPORTER_OTLP_ENDPOINT=http://localhost:4317
+      - OTEL_EXPORTER_OTLP_ENDPOINT=http://20.22.145.68:4317
       - JAVA_OPTS=-javaagent:/opentelemetry-javaagent.jar
     ports:
       - "8082:8082"
