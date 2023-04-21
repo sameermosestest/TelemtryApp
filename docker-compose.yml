@@ -1,7 +1,7 @@
 version: '3.1'
 services:
   springapp:
-    container_name: springapp
+    container_name: springtelemetryapp
     build:
       dockerfile: Dockerfile
     environment:
