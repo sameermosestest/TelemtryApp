@@ -1,13 +1,15 @@
 version: '3.1'
 services:
   springtelemetryapp:
-    container_name: springtelemetryapp
+    container_name: backendspring
     build:
       dockerfile: Dockerfile
     environment:
       - OTEL_SERVICE_NAME=backendapp
-      - OTEL_EXPORTER=otlp_span
-      - OTEL_EXPORTER_OTLP_ENDPOINT=http://20.22.145.68:4317
+      - OTEL_EXPORTER=otlp_span,prometheus
+      - OTEL_EXPORTER_OTLP_INSECURE=true
+      - OTEL_RESOURCE_ATTRIBUTES=service.name=backendapp
+      - OTEL_EXPORTER_OTLP_ENDPOINT=http://20.55.244.67:9092/topics/SAMPLE_TOPIC
       - JAVA_OPTS=-javaagent:/opentelemetry-javaagent.jar
     ports:
       - "8082:8082"
