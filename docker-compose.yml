@@ -1,7 +1,7 @@
 version: '3.1'
 services:
   backendspringjava:
-    container_name: backendspringjava
+    container_name: backendjava
     build:
       dockerfile: Dockerfile
     environment:
