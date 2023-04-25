@@ -1,11 +1,11 @@
 version: '3.1'
 services:
-  backendjava:
-    container_name: backendjava
+  backendspring:
+    container_name: backendspring
     build:
       dockerfile: Dockerfile
     environment:
-      - OTEL_SERVICE_NAME=backendapp
+      - OTEL_SERVICE_NAME=backendspring
       - OTEL_EXPORTER=otlp_span,prometheus
       - OTEL_EXPORTER_OTLP_INSECURE=true
       - OTEL_RESOURCE_ATTRIBUTES=service.name=backendapp
