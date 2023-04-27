@@ -1,7 +1,7 @@
 version: '3.1'
 services:
-  backendspringtelemetry1:
-    container_name: backendspringtelemetry1
+  backendspringtelemetry2:
+    container_name: backendspringtelemetry2
     build:
       dockerfile: Dockerfile
     environment:
