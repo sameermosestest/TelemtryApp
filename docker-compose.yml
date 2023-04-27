@@ -1,7 +1,6 @@
 version: "2"
 services:
-
-  hotrod:
+  otelimage:
     image: sameermosesmurala/backendspringtelemetry2:latest
     ports:
       - "8082:8082"
