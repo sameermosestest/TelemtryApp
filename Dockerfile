@@ -8,9 +8,8 @@ COPY ${JAR_FILE} backendapp.jar
 ENV JAVA_TOOL_OPTIONS="-javaagent:opentelemetry-javaagent.jar \
 -Dotel.traces.exporter=otlp \
 -Dotel.logs.exporter=otlp \
--Dotel.exporter.otlp.endpoint=http://20.12.97.43:4317 \
--Dotel.exporter.otlp.traces.endpoint=http://20.12.97.43:4317 \
--Dotel.exporter.otlp.logs.endpoint=http://20.72.88.200:3100 \
+-Dotel.exporter.otlp.traces.endpoint=http://0.0.0.0:4317 \
+-Dotel.exporter.otlp.logs.endpoint=http://0.0.0.0:3100 \
 -Dotel.exporter.otlp.insecure=true\
 -Dotel.exporter.otlp.traces.insecure=true \
 -Dotel.exporter.otlp.metrics.insecure=true \
