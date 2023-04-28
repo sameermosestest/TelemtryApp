@@ -1,7 +1,7 @@
 version: '3.1'
 services:
-  backendwithTempo:
-    container_name: backendwithTempo
+  backendwithtempo:
+    container_name: backendwithtempo
     build:
       dockerfile: Dockerfile
     environment:
