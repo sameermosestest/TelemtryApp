@@ -10,7 +10,7 @@ services:
       - OTEL_EXPORTER=otlp_span,prometheus
       - OTEL_EXPORTER_OTLP_INSECURE=true
       - OTEL_RESOURCE_ATTRIBUTES=service.name=backendapp
-      - OTEL_EXPORTER_OTLP_ENDPOINT=http://220.12.97.43:4317
+      - OTEL_EXPORTER_OTLP_ENDPOINT=http://20.12.97.43:4317
       - JAVA_OPTS=-javaagent:/opentelemetry-javaagent.jar
     ports:
       - "8082:8082"
