@@ -7,9 +7,7 @@ COPY opentelemetry-javaagent.jar /opentelemetry-javaagent.jar
 COPY ${JAR_FILE} backendapp.jar
 ENV JAVA_TOOL_OPTIONS="-javaagent:opentelemetry-javaagent.jar \
 -Dotel.traces.exporter=otlp \
--Dotel.metrics.exporter=otlp \
 -Dotel.logs.exporter=otlp \
--Dotel.exporter.otlp.metrics.endpoint=http://20.85.110.32:9090 \
 -Dotel.exporter.otlp.endpoint=http://20.12.97.43:4317 \
 -Dotel.exporter.otlp.traces.endpoint=http://20.12.97.43:4317 \
 -Dotel.exporter.otlp.logs.endpoint=http://20.72.88.200:3100 \
@@ -19,5 +17,8 @@ ENV JAVA_TOOL_OPTIONS="-javaagent:opentelemetry-javaagent.jar \
 -Dotel.exporter.otlp.logs.insecure=true \
 -Dotel.exporter.otlp.span.insecure=true \
 -Dotel.exporter.otlp.metric.insecure=true \
+-Dotel.metrics.exporter=prometheus \
+-Dotel.exporter.prometheus.port=9464 \
+-Dotel.exporter.otlp.metrics.host=0.0.0.0 \
 -Dotel.resource.attributes=service.name=user-api"
 ENTRYPOINT ["java","-jar","/backendapp.jar"]
