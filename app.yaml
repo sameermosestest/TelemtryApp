@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backendspring
+  labels:
+    app: backendspring
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: javaapp
+  template:
+    metadata:
+      labels:
+        app: javaapp
+    spec:
+      containers:
+      - name: backendspring
+        image: sameermosesmurala/backendspring
+        ports:
+        - containerPort: 8082

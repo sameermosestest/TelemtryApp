@@ -1,13 +1,15 @@
 receivers:
-  otlp:
-    protocols:
-      http:
-        endpoint: 0.0.0.0:4318
-      grpc:
-        endpoint: http://20.22.168.207:4317
+ otlp:
+   protocols:
+     grpc:
+processors:
+  batch:
+exporters:
+ otlp:
+   endpoint: tempo-us-central1.grafana.net:443
 service:
-  pipelines:
-    traces:
-      receivers: [otlp]
-      processors: []
-      exporters: []
+ pipelines:
+   traces:
+     receivers: [otlp]
+     processors: [batch]
+     exporters: [otlp]

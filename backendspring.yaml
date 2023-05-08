@@ -1,24 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: springtempo
+  name: springtempcollector
   labels:
-    app: springtempo
+    app: springtempcollector
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: springtempo
+      app: springtempcollector
   template:
     metadata:
       annotations:
         instrumentation.opentelemetry.io/inject-java: 'true'
-        sidecar.opentelemetry.io/inject: 'true'
       labels:
-        app: springtempo
+        app: springtempcollector
     spec:
       containers:
-        - name: springtempo
-          image: sameermosesmurala/springtempo
+        - name: springtempcollector
+          image: sameermosesmurala/springtempcollector
           ports:
             - containerPort: 8082
