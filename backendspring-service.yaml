@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: springtempo
+spec:
+  ports:
+    - name: springtempo
+      port: 8082
+      targetPort: 8082
+    - name: backendcollector
+      port: 5555
+      targetPort: 5555
+  selector:
+    app: springtempo
+  type: LoadBalancer
