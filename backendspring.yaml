@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: springtempcollector
+  name: backendcors
   labels:
-    app: springtempcollector
+    app: backendcors
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: springtempcollector
+      app: backendcors
   template:
     metadata:
       annotations:
         instrumentation.opentelemetry.io/inject-java: 'true'
       labels:
-        app: springtempcollector
+        app: backendcors
     spec:
       containers:
-        - name: springtempcollector
-          image: sameermosesmurala/springtempcollector
+        - name: backendcors
+          image: sameermosesmurala/backendcors
           ports:
             - containerPort: 8082
