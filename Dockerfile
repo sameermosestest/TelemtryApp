@@ -8,6 +8,6 @@ COPY ${JAR_FILE} backendapp.jar
 ENV JAVA_TOOL_OPTIONS="-javaagent:aws-opentelemetry-agent.jar \
 -Dotel.traces.exporter=otlp \
 -Dotel.metrics.exporter=otlp \
--Dotel.exporter.otlp.endpoint=http://10.244.0.232:5555 \
+-Dotel.exporter.otlp.endpoint=http://10.244.0.251:5555 \
 -Dotel.resource.attributes=service.name=user-api,service.version=1.0"
 ENTRYPOINT ["java","-jar","/backendapp.jar"]
